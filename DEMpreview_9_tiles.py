@@ -1,5 +1,3 @@
-import datetime
-import time
 import numpy
 import os
 import matplotlib.pyplot as plt
@@ -34,11 +32,8 @@ def tile(lat,lon,rest):
     file_name="./"+hem_latlon(lat, lon)+rest
     return file_name
     
+def preview(file) :    
 
-def preview(file) :   
-    wall_time = time.perf_counter()   
-    histogram=True
-    scatter_plot=False 
     try:  
       head, tail = os.path.split(file)
       rest=tail[7:len(tail)]
@@ -82,11 +77,9 @@ def preview(file) :
     [all_tiles[6], all_tiles[7], all_tiles[8]]
      ])
    
-       
-    
+           
     combined_data[combined_data==nodata]=np.nan
-    
-    
+     
     masked_dem_data = np.ma.masked_invalid(combined_data)
     
     hillshade = es.hillshade(masked_dem_data, altitude=30, azimuth=210)
@@ -94,10 +87,6 @@ def preview(file) :
     cmap = plt.get_cmap('terrain') 
     cmap.set_bad(color='white')
     
-    
-    # Plot the DEM and hillshade at the same time
-    
-    #masked_dem_data = np.ma.masked_invalid(alt_dem)
   
     # Plot the DEM and hillshade at the same time
     cmap = plt.get_cmap('terrain') 
@@ -106,7 +95,7 @@ def preview(file) :
        masked_dem_data,
        ax=ax,
        cmap=cmap,
-       title=f"DEM file: {tail}",
+       title=f"DEM file: {tail} + available surrounding tiles",
        )
     ax.imshow(hillshade, cmap="Greys", alpha=0.5)
 
