@@ -113,7 +113,7 @@ def preview(file) :
     plt.show()   
 
 error_msg="\nError!\n\nSyntax: python DEMpreview /path to dem file\n\n\
-or:\n\npython DEMpreview  - from a folder with multiple DEM files\n"
+or:\n\npython DEMpreview_9_tiles.py  - from a folder with multiple DEM files\n"
 
 def main():
  if len(sys.argv)==1:
