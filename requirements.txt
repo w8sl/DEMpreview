@@ -1,0 +1,6 @@
+numpy
+shapely
+pillow
+matplotlib
+earthpy
+rasterio
