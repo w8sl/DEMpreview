@@ -1,4 +1,4 @@
-### Simple_DEMpreview
+### DEMpreview
 
 A Python script for viewing Digital Elevation Model (DEM) files using [EarthPy](https://earthpy.readthedocs.io/en/latest/index.html)
 
